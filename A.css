@@ -1,0 +1,102 @@
+body {
+    background-image: url('play.JPG'); /* 替換為你的背景圖片路徑 */
+    background-size: cover; /* 讓背景圖片覆蓋整個頁面 */
+    background-position: center; /* 讓背景圖片居中 */
+    margin: 0; /* 去掉預設邊距 */
+    height: 100vh; /* 設定高度為視窗高度 */
+    overflow: hidden; /* 隱藏超出範圍的部分 */
+    position: relative; /* 相對定位 */
+}
+
+#character {
+    width: 150px; /* 圖片的寬度 */
+    height: 150px; /* 圖片的高度 */
+    background-image: url('dinosaurs1.png'); /* 替換為你的圖片路徑 */
+    background-size: cover; /* 讓圖片填滿元素 */
+    position: absolute;
+    bottom: 0; /* 初始底部位置 */
+    left: calc(50% - 75px); /* 水平置中 (寬度一半) */
+    transition: left 0.1s, bottom 0.2s; /* 平滑移動 */
+}
+
+#message {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    left: 50%; /* 水平居中 */
+    transform: translate(-50%, -50%); /* 完全居中 */
+    font-size: 100px;
+    color: rgb(180, 50, 50); /* 字體顏色 */
+    text-align: center;
+    display: none; /* 初始隱藏 */
+    animation: blink 1s infinite; /* 添加閃爍動畫 */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1; /* 完全可見 */
+    }
+    50% {
+        opacity: 0; /* 完全隱藏 */
+    }
+}
+
+#obstacle {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0; /* 與角色相同的底部高度 */
+    right: -100px; /* 障礙物起始位置在視窗外 */
+    background-image: url('soil.png'); /* 設定背景圖片 */
+    background-size: cover; /* 使圖片填滿整個 div */
+    background-repeat: no-repeat; /* 防止圖片重複 */
+    animation: moveObstacle 2s linear infinite; /* 無限動畫 */
+    transition: left 0.016s linear; /* 過渡效果 */
+    position: absolute; /* 確保可以使用 left 屬性 */
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -100px; /* 開始位置 */
+    }
+    100% {
+        right: 100%; /* 到達右側 */
+    }
+}
+
+.jump {
+    animation: jump 0.5s forwards; /* 加入跳躍動畫 */
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0; /* 初始底部位置 */
+    }
+    50% {
+        bottom: 150px; /* 跳躍到最高點 */
+    }
+    100% {
+        bottom: 0; /* 回到初始位置 */
+    }
+}
+
+.flip {
+    transform: rotate(90deg); /* 旋轉90度 */
+    transition: transform 0.2s; /* 添加平滑過渡 */
+}
+
+#score {
+    position: absolute; /* 讓分數顯示在畫面上 */
+    top: 20px; /* 距離上方的距離 */
+    left: 20px; /* 距離左側的距離 */
+    font-size: 24px; /* 字體大小 */
+    color: white; /* 字體顏色 */
+    padding: 10px; /* 內邊距 */
+    border-radius: 5px; /* 圓角 */
+    z-index: 10; /* 確保分數在其他元素之上 */
+    font-family: Arial, sans-serif; /* 字體 */
+}
+
+/* 增加倒地的樣式 */
+.fall {
+    transform: rotate(90deg); /* 90度旋轉 */
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歡迎來到恐龍世界</title>
+  <link rel="stylesheet" href="start.css"> <!-- 可統一為 start.css -->
+</head>
+<body onload="checkLogin()">
+
+  <div class="container">
+    <h2>歡迎，<span id="username"></span>！</h2>
+    <button onclick="logout()">登出</button>
+  </div>
+
+  <div id="container">
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
+    <div id="percent">1%</div>
+  </div>
+
+  <div id="buttonContainer">
+    <button onclick="move()">Play</button>
+  </div>
+
+  <!-- 自動播放音樂 -->
+  <audio id="myAudio" src="Dinosaurs.mp4" type="audio/mpeg" autoplay></audio>
+
+  <!-- 合併後的 JS -->
+  <script>
+    // 登入檢查
+    function checkLogin() {
+      const username = localStorage.getItem("loggedInUser");
+      if (username) {
+        document.getElementById("username").textContent = username;
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+
+    // 登出
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html";
+    }
+
+    // 進度條播放
+    function move() {
+      let elem = document.getElementById("myBar");
+      let percentText = document.getElementById("percent");
+      let width = 1;
+      let id = setInterval(frame, 15);
+
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          window.location.href = "dinosaurs.html";
+        } else {
+          width++;
+          elem.style.width = width + '%';
+          percentText.innerHTML = width + '%';
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

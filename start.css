@@ -1,0 +1,96 @@
+/* style.css */
+
+/* 设置背景图片 */
+body {
+    background-image: url('start.JPG'); /* 替换为你的背景图片路径 */
+    background-size: cover; /* 让背景图片覆盖整个页面 */
+    background-position: center; /* 让背景图片居中 */
+    margin: 0; /* 去掉默认边距 */
+    height: 100vh; /* 设置高度为视窗高度 */
+    display: flex; /* 使用 flexbox 置中 */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    flex-direction: column; /* 让子元素垂直排列 */
+}
+
+#container {
+    text-align: center; /* 置中 */
+}
+
+#percent {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-size: 35px;
+    margin-top: 10px; /* 添加上边距 */
+}
+
+#buttonContainer {
+    text-align: center; /* 置中 */
+    margin-top: 20px; /* 上边距 */
+}
+
+button {
+    background-color: transparent; /* 无背景色 */
+    border: none; /* 无边框 */
+    color: rgb(255, 255, 255); /* 字体颜色 */
+    font-size: 50px; /* 字体大小 */
+    font-weight: bold; /* 粗体字 */
+    cursor: pointer; /* 改变鼠标样式 */
+    padding: 10px 20px; /* 内边距 */
+    transition: color 0.3s; /* 加入过渡效果 */
+}
+
+button:hover {
+    color: #ffc7c7; /* 鼠标悬停时改变字体颜色 */
+}
+
+#playPauseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#playPauseButton img {
+    width: 50px;
+    height: 50px;
+}
+/* 控制整個歡迎區塊的容器位置 */
+.container {
+    position: absolute;
+    top: 30px; /* 距離頂部的位置 */
+    left: 30px; /* 距離左側的位置 */
+    text-align: left; /* 對齊方式 */
+}
+
+/* 歡迎文字 */
+h2 {
+    color: rgb(255, 255, 255);
+    font-weight: 100;
+    font-size: 20px; /* ↓ 可調整大小 */
+    margin: 0;
+    font-weight: bold;
+}
+
+/* 使用者名稱的樣式（更醒目） */
+#username {
+    font-weight: bold;
+    color: #ffffff; /* 金黃色 */
+    font-size: 20px; /* 單獨加大使用者名稱 */
+}
+
+/* 登出按鈕樣式 */
+.container button {
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 8px 16px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

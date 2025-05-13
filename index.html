@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>登入與註冊</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="loginForm" class="form active">
+      <h2>登入</h2>
+      <input type="text" placeholder="帳號" id="loginUsername">
+      <input type="password" placeholder="密碼" id="loginPassword">
+      <button onclick="login()">登入</button>
+      <div class="toggle-link" onclick="toggleForm()">沒有帳號？註冊</div>
+    </div>
+
+    <div id="registerForm" class="form">
+      <h2>註冊</h2>
+      <input type="text" placeholder="帳號" id="registerUsername">
+      <input type="password" placeholder="密碼" id="registerPassword">
+      <button onclick="register()">註冊</button>
+      <div class="toggle-link" onclick="toggleForm()">已經有帳號？登入</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+    background-image: url('play.JPG'); /* 替換為你的背景圖片路徑 */
+    background-size: cover; /* 讓背景圖片覆蓋整個頁面 */
+    background-position: center; /* 讓背景圖片居中 */
+    margin: 0; /* 去掉預設邊距 */
+    height: 100vh; /* 設定高度為視窗高度 */
+    display: flex; /* 使用 flexbox 置中 */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    flex-direction: column; /* 讓子元素垂直排列 */
+}
+h1 {
+    color: #333;
+}
+.button-container {
+    display: flex; /* 使用 flexbox 來排列按鍵 */
+    justify-content: center; /* 按鍵水平居中 */
+    width: 80%; /* 設定容器寬度 */
+}
+button {
+    background-color: #c5bcd3; /* 綠色背景 */
+    color: white; /* 白色字體 */
+    border: none; /* 去掉邊框 */
+    padding: 15px 32px; /* 上下左右內邊距 */
+    text-align: center; /* 文字居中 */
+    text-decoration: none; /* 去掉下劃線 */
+    display: inline-block; /* 使按鍵顯示為行內塊 */
+    font-size: 16px; /* 字體大小 */
+    margin: 10px 2px; /* 外邊距 */
+    cursor: pointer; /* 鼠標懸停時顯示為手形 */
+    border-radius: 5px; /* 按鍵圓角 */
+    transition: background-color 0.3s; /* 背景顏色過渡效果 */
+}
+
+button:hover {
+    background-color: #e5b7c3; /* 懸停時的背景顏色 */
+}
