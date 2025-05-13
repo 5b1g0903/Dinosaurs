@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>歡迎來到恐龍世界</title>
   <link rel="stylesheet" href="start.css"> <!-- 可統一為 start.css -->
 </head>
+
 <body onload="checkLogin()">
 
   <div class="container">
@@ -63,7 +65,12 @@
         }
       }
     }
+    if (!localStorage.getItem("loggedInUser")) {
+      alert("請先登入！");
+      window.location.href = "index.html"; // 返回登入頁
+    }
   </script>
 
 </body>
+
 </html>
